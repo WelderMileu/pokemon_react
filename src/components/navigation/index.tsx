@@ -1,7 +1,11 @@
 import { BiBug } from 'react-icons/bi'
 import Image from '../../assets/img/logo.png'
 
-const Nav = () => (
+interface Limit {
+    limit: Number
+}
+
+const Nav = (props:Limit) => (
     <nav className="fixed px-10 top-0 z-10 bg-white w-full h-20 drop-shadow-lg flex space-x-96 items-center border-b-2">
         <div className="flex justify-center items-center">
             <img src={Image} width={30} />
@@ -14,7 +18,7 @@ const Nav = () => (
                     <BiBug className='text-gray-600 text-2xl' />
                 </div>
                 <div className="border-l-0 border-2 border-gray-200 w-16 h-12 flex items-center justify-center rounded-tr-full rounded-br-full">
-                    <p id="count" className="text-lg"></p>
+                    <p className="text-lg">{props.limit}</p>
                 </div>
             </div>
         </div>
