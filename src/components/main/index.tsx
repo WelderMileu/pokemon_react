@@ -4,39 +4,19 @@ import Card from "../card";
 
 interface Props {
     name: String;
-    img: String;
+    image: String;
 }
 
-export const opt = {
-    "limit": 103,
-    "offset": 200
-}
+export let limit = 100
 
 const Main = () => {
     const [data, setData] = useState<Props[]>([])
-    const results: Props[] = []
 
     useEffect(() => {
         api
-            .get(`?limit=${opt.limit}&offset=${opt.offset}`)
-            .then(response => results.push(response.data.results))
+            .get("findAll")
+            .then(response => setData(response.data))
             .catch(err => console.log(err))
-
-        for (let init = 0; init < results.length; init++) {
-            let position = init + opt.offset
-
-            api
-                .get(`${position}`)
-                .then(response => {
-                    let species: any = {
-                        name: response.data.species.name,
-                        img: response.data.sprites.front_default
-                    }
-
-                    setData(species)
-                })
-                .catch(err => console.log(err))
-        }
     }, [])
 
     return (
@@ -45,7 +25,7 @@ const Main = () => {
                 <Card
                     key={index}
                     name={item.name}
-                    img={item.img}
+                    img={item.image}
                     index={index + 1}
                 />
             ))}

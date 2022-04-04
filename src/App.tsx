@@ -4,13 +4,13 @@ import './css/output.css'
 import Nav from './components/navigation'
 import Main from './components/main'
 
-import { opt } from './components/main'
+import { limit } from './components/main'
 
 function App() {
 
   return (
     <Fragment>
-        <Nav limit={opt.limit}/>
+        <Nav limit={limit}/>
         <Main />
     </Fragment>
   )
