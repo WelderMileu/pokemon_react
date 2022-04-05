@@ -1,0 +1,1 @@
+url =  https://pokemon-navy-eight.vercel.app
