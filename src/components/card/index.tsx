@@ -10,8 +10,10 @@ const Card = (props:Options) => (
                     border-2
                     border-gray-200
                     m-5
-                    w-48
-                    h-56
+                    w-full
+                    sm:w-48
+                    h-72
+                    sm:h-56
                     rounded-lg
                     flex
                     items-center

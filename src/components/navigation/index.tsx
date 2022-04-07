@@ -6,12 +6,12 @@ interface Limit {
 }
 
 const Nav = (props:Limit) => (
-    <nav className="fixed px-10 top-0 z-10 bg-white w-full h-20 drop-shadow-lg flex space-x-96 items-center border-b-2">
+    <nav className="fixed px-5 sm:px-10 top-0 z-10 bg-white w-full h-20 drop-shadow-lg flex space-x-96 items-center border-b-2">
         <div className="flex justify-center items-center">
             <img src={Image} width={30} />
             <p className="text-lg pl-2 text-gray-600 font-semibold">Pokémon Go</p>
         </div>
-        <div className="flex items-center justify-center absolute right-10 sm:right-36">
+        <div className="hidden sm:flex items-center justify-center absolute right-10 sm:right-36">
             <input type="text" name="search" placeholder="Procurar Pokémon..." className="w-56 h-12 bg-gray-100 rounded-full mr-3 pl-7 text-gray-600 border-none text-base outline-none placeholder:text-gray-500 sm:w-96" />
             <div className="pl-3 flex items-center justify-center">
                 <div className="flex items-center justify-center bg-gray-200 w-16 h-12 rounded-tl-full rounded-bl-full">
