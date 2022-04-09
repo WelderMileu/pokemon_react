@@ -24,24 +24,24 @@ const Main = () => {
             .catch(err => console.log(err))    
     }, [])
 
-    if (load === false) {
+    // if (load === false) {
         return (
             <Load />
         )
-    }
+    // }
 
-    return (
-        <div className="p-10 sm:p-20 mt-10 flex flex-wrap">
-            {data.map((item, index) => (
-                <Card
-                    key={index}
-                    name={item.name}
-                    img={item.image}
-                    index={index + 1}
-                />
-            ))}
-        </div>
-    )
+    // return (
+    //     <div className="p-10 sm:p-20 mt-10 flex flex-wrap">
+    //         {data.map((item, index) => (
+    //             <Card
+    //                 key={index}
+    //                 name={item.name}
+    //                 img={item.image}
+    //                 index={index + 1}
+    //             />
+    //         ))}
+    //     </div>
+    // )
 }
 
 export default Main

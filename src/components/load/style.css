@@ -1,17 +1,8 @@
 .circle {
-    stroke-dasharray: 200;
-    stroke-dashoffset: 20;
+    stroke-dasharray: 30;
+    stroke-dashoffset: 70;
     stroke-linecap: round;
     stroke:crimson;
-    stroke-width: 2;
-    fill: none;
-}
-
-.circle2 {
-    stroke-dasharray: 90;
-    stroke-dashoffset: 150;
-    stroke-linecap: round;
-    stroke:crimson;
-    stroke-width: 5;
+    stroke-width: 3;
     fill: none;
 }
