@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../../services/api";
 import Card from "../card";
+import Load from "../load"
 
 interface Props {
     name: String;
@@ -11,13 +12,23 @@ export let limit = 100
 
 const Main = () => {
     const [data, setData] = useState<Props[]>([])
+    const [load, setLoad] = useState(false)
 
     useEffect(() => {
         api
             .get("findAll")
-            .then(response => setData(response.data))
-            .catch(err => console.log(err))
+            .then(response => { 
+                setData(response.data)
+                setLoad(true)
+            })
+            .catch(err => console.log(err))    
     }, [])
+
+    if (load === false) {
+        return (
+            <Load />
+        )
+    }
 
     return (
         <div className="p-10 sm:p-20 mt-10 flex flex-wrap">
